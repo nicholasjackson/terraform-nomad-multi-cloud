@@ -27,7 +27,7 @@ job "fabio" {
       }
 
       config {
-        image = "docker.io/magiconair/fabio:latest"
+        image = "magiconair/fabio:latest"
 
         port_map {
           http = 9999
@@ -35,8 +35,8 @@ job "fabio" {
       }
 
       resources {
-        cpu    = 500 # 500 MHz
-        memory = 256 # 256MB
+        cpu    = 250 # 500 MHz
+        memory = 128 # 256MB
 
         network {
           mbits = 10
@@ -62,6 +62,35 @@ job "fabio" {
           interval = "10s"
           timeout  = "2s"
           path     = "/health"
+        }
+      }
+    }
+
+    task "dogstatsd" {
+      driver = "docker"
+
+      env = {
+        API_KEY = "6980eb5311fa8e6b5822a6a562bf7c6e"
+      }
+
+      config {
+        image = "datadog/docker-dogstatsd"
+
+        port_map {
+          statsd = 8125
+        }
+      }
+
+      resources {
+        cpu    = 250 # 500 MHz
+        memory = 128 # 256MB
+
+        network {
+          mbits = 10
+
+          port "statd" {
+            static = "8125"
+          }
         }
       }
     }

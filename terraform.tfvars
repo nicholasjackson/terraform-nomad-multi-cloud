@@ -10,7 +10,7 @@ nomad_version = "0.5.6"
 
 nomad_servers = 3
 
-nomad_agents = 2
+nomad_agents = 3
 
 hashiui_version = "0.13.4"
 

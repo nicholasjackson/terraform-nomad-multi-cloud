@@ -31,8 +31,8 @@ job "nginx" {
       }
 
       resources {
-        cpu    = 500 # 500 MHz
-        memory = 256 # 256MB
+        cpu    = 250 # 500 MHz
+        memory = 128 # 256MB
 
         network {
           mbits = 10

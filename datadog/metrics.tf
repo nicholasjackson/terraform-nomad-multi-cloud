@@ -8,7 +8,7 @@ resource "datadog_timeboard" "events" {
     viz   = "timeseries"
 
     request {
-      q    = "sum:nomad.publisher.badrequest{cloud}"
+      q    = "sum:nomad.publisher.badrequest{*} by {cloud}.as_count()"
       type = "bars"
 
       style {
@@ -17,7 +17,7 @@ resource "datadog_timeboard" "events" {
     }
 
     request {
-      q    = "sum:nomad.publisher.success{cloud}"
+      q    = "sum:nomad.publisher.success{*} by {cloud}.as_count()"
       type = "bars"
     }
   }
@@ -27,7 +27,7 @@ resource "datadog_timeboard" "events" {
     viz   = "timeseries"
 
     request {
-      q    = "sum:nomad.receiver.badrequest{cloud}"
+      q    = "sum:nomad.receiver.badrequest{*} by {cloud}.as_count()"
       type = "bars"
 
       style {
@@ -36,7 +36,7 @@ resource "datadog_timeboard" "events" {
     }
 
     request {
-      q    = "sum:nomad.receiver.received{cloud}"
+      q    = "sum:nomad.receiver.received{*} by {cloud}.as_count()"
       type = "bars"
     }
   }
