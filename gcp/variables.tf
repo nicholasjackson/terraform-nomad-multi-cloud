@@ -65,3 +65,7 @@ variable "hashiui_enabled" {
 variable "hashiui_version" {
   description = "Version number for hashi-ui"
 }
+
+variable "gcp_region" {
+  description = "region for GCP"
+}

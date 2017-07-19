@@ -9,10 +9,6 @@ it manually with each run
 EOH
 }
 
-variable "fastly_api_key" {
-  description = "API Key for Fastly"
-}
-
 variable "route53_zone" {
   description = "Route53 DNS Zone"
 }
@@ -56,4 +52,12 @@ variable "hashiui_version" {
 # Nats.io settings
 variable "nats_connection" {
   description = "Connection string for Nats cloud"
+}
+
+variable "aws_region" {
+  description = "Region for AWS"
+}
+
+variable "gcp_region" {
+  description = "Region for GCP"
 }

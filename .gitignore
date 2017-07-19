@@ -5,3 +5,4 @@ Terraform.tfstate.backup
 .envrc
 .terraform
 tags
+.DS_Store

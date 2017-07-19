@@ -1,7 +1,3 @@
-variable "fastly_api_key" {
-  description = "API Key for Fastly services"
-}
-
 variable "route53_zone" {
   description = "Zone for Route53 DNS"
 }

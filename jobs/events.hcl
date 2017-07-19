@@ -71,6 +71,10 @@ job "events" {
 
       config {
         image = "nicholasjackson/example-nats-receiver:latest"
+
+        port_map {
+          http = 8080
+        }
       }
 
       env {
@@ -85,6 +89,8 @@ job "events" {
 
         network {
           mbits = 10
+
+          port "http" {}
         }
       }
     }
